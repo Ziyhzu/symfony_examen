@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HabitacionesController!{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/Index.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{% for message in app.flashes('insert') %}
+    <div class="w-25 mx-auto alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{% for message in app.flashes('insert-form') %}
+    <div class="w-25 mx-auto alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{% for message in app.flashes('modificar') %}
+    <div class="w-25 mx-auto alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+{% for message in app.flashes('borrar') %}
+    <div class="w-25 mx-auto alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+<main class="margenes">
+    <a href="/menu"><button class="btn btn-light mt-3">VOLVER AL MENU</button></a>
+    <table class="table table-bordered border-dark table-sm table-striped-columns mt-3">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Tipo de Habitación</th>
+            <th>Número de Habitación</th>
+            <th>Precio por Día</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for habitacion in habitaciones %}
+            <tr>
+                <td>{{ habitacion.getHabitacionIdPk() }}</td>
+                <td>{{ habitacion.getTipoHabitacion() }}</td>
+                <td>{{ habitacion.getNumeroHabitacion() }}</td>
+                <td>{{ habitacion.getPrecioDia() }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</main>
+
+
+{% endblock %}

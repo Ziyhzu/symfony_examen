@@ -1,0 +1,19 @@
+body {
+    background-color: rgba(60, 60, 59, 1) !important;
+}
+
+header, main {
+    background-color: rgba(60, 60, 59, 1);
+    color: rgba(249, 191, 60, 1) !important;
+}
+
+.margenes {
+    margin: 0 auto; /* Esto centra el contenedor en la pantalla */
+    max-width: 1200px; /* Cambia este valor según el ancho máximo deseado */
+    padding-left: 15px; /* Añade un espacio a la izquierda para compensar el padding de Bootstrap */
+    padding-right: 15px; /* Añade un espacio a la derecha para compensar el padding de Bootstrap */
+}
+
+.btn-container {
+    display: flex;
+}

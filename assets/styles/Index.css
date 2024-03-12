@@ -1,0 +1,36 @@
+body {
+    background-color: rgba(60, 60, 59, 1) !important;
+}
+
+header, main {
+    background-color: rgba(60, 60, 59, 1);
+    color: rgba(249, 191, 60, 1) !important;
+}
+
+
+
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(249, 191, 60, 1);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .margenes {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.btn-square {
+    border-radius: 0;
+}
+
+.btn-smaller {
+    font-size: 12px;
+}

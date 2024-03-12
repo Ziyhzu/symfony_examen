@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HabitacionesController!{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/Index.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{% for message in app.flashes('joinuno') %}
+    <div class="w-25 mx-auto alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+
+<main class="margenes">
+    <a href="/menu"><button class="btn btn-light mt-3">VOLVER AL MENU</button></a>
+    <table class="table table-bordered border-dark table-sm table-striped-columns mt-3">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Tipo de Habitación</th>
+            <th>Dias de hospedaje</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for habitacion in habitaciones %}
+            <tr>
+                <td>{{ habitacion.cliente }}</td>
+                <td>{{ habitacion.tipo_habitacion }}</td>
+                <td>{{ habitacion.dias }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</main>
+{% endblock %}

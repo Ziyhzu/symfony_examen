@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservasController!{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/Index.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{% for message in app.flashes('insert-form') %}
+    <div class="w-25 mx-auto alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+
+<main class="margenes">
+    <a href="/menu"><button class="btn btn-light mt-3">VOLVER AL MENU</button></a>
+    <table class="table table-bordered border-dark table-sm table-striped-columns mt-3">
+    <thead>
+        <tr>
+            <th>Codigo reserva</th>
+            <th>Cliente</th>
+            <th>Fecha de entrada</th>
+            <th>Fecha de salida</th>
+            <th>Codigo habitacion</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for reserva in reservas %}
+            <tr>
+                <td>{{ reserva.getReservasIdPk() }}</td>
+                <td>{{ reserva.getCliente() }}</td>
+                <td>{{ reserva.getFechaEntrada()|date('d/m/Y') }}</td>
+                <td>{{ reserva.getFechaSalida()|date('d/m/Y') }}</td>
+                {% if reserva.getHabitacionIdFk() is not null %}
+                    <td>{{ reserva.getHabitacionIdFk().getHabitacionIdPk() }}</td>
+                {% else %}
+                    <td>El registro fue eliminado</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</main>
+{% endblock %}

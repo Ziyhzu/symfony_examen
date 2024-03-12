@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MenuController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/Menu.css') }}">
+{% endblock %}
+
+{% block body %}
+
+	<main class="margenes mt-5">
+		<div class="btn-container">
+			<div class="me-2">
+				<p class="display-6 bg-secondary">ENTIDAD HABITACIONES</p>
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Insertar datos con endpoint</p></strong>
+				<em><p>http://localhost:8000/habitaciones/insertar-endpoint/Habitacion deluxe/204/130/1 </p></em>
+				<a href="http://localhost:8000/habitaciones/insertar-endpoint/Habitacion deluxe/204/130/1"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Insertar datos con formulario</p></strong>
+				<em><p>http://localhost:8000/habitaciones/insertar-formulario</p></em>
+				<a href="http://localhost:8000/habitaciones/insertar-formulario"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Modificar datos con endpoint</p></strong>
+				<em><p>http://localhost:8000/habitaciones/modificar-endpoint/Habitacion estandar/125.00</p></em>
+				<a href="http://localhost:8000/habitaciones/modificar-endpoint/Habitacion estandar/125.00"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Consultar tabla con twig</p></strong>
+				<em><p>http://localhost:8000/habitaciones/consultar-twig</p></em>
+				<a href="http://localhost:8000/habitaciones/consultar-twig"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Consultar tabla con JSON</p></strong>
+				<em><p>http://localhost:8000/habitaciones/consultar-json</p></em>
+				<a href="http://localhost:8000/habitaciones/consultar-json"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+	
+				<div class="border border-4 rounded p-3">
+				<strong><p>Borrado fisico</p></strong>
+				<em><p>http://localhost:8000/habitaciones/borrado-fisico/1</p></em>
+				<a href="http://localhost:8000/habitaciones/borrado-fisico/1"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+			</div>
+			<div class="me-2">
+				<p class="display-6 bg-secondary">ENTIDAD RESERVAS</p>
+
+
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Insertar datos con formulario</p></strong>
+				<em><p>http://localhost:8000/reservas/insertar-formulario</p></em>
+				<a href="http://localhost:8000/reservas/insertar-formulario"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Consultar tabla con twig</p></strong>
+				<em><p>http://localhost:8000/reservas/consultar-twig</p></em>
+				<a href="http://localhost:8000/reservas/consultar-twig"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+	
+			<div class="border border-4 rounded p-3">
+				<strong><p>Consultar tabla con JSON</p></strong>
+				<em><p>http://localhost:8000/reservas/consultar-json</p></em>
+				<a href="http://localhost:8000/reservas/consultar-json"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+
+			</div>
+			<div class="me-2">
+				<p class="display-6 bg-secondary">ENTIDAD REVIEWS</p>
+
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Insertar datos con formulario</p></strong>
+				<em><p>http://localhost:8000/reviews/insertar-formulario</p></em>
+				<a href="http://localhost:8000/reviews/insertar-formulario"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Consultar tabla con twig</p></strong>
+				<em><p>http://localhost:8000/reviews/consultar-twig</p></em>
+				<a href="http://localhost:8000/reviews/consultar-twig"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Consultar tabla con JSON</p></strong>
+				<em><p>http://localhost:8000/reviews/consultar-json</p></em>
+				<a href="http://localhost:8000/reviews/consultar-json"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+				
+			</div>
+			<div class="me-2">
+				<p class="display-6 bg-secondary">CONSULTAS JOIN</p>
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Clientes + tipo de habitacion + dias de hospedaje (Twig)</p></strong>
+				<em><p>http://localhost:8000/habitaciones/join-uno</p></em>
+				<a href="http://localhost:8000/habitaciones/join-uno"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+
+				<div class="border border-4 rounded p-3">
+				<strong><p>Clientes + su comentario + su nota de valoracion (JSON)</p></strong>
+				<em><p>http://localhost:8000/reservas/join-dos</p></em>
+				<a href="http://localhost:8000/reservas/join-dos"><i class="fa-solid fa-arrow-right"></i> Pulse AQUI </a>
+                </div>
+				<br>
+				<a href="{{ path('index') }}">
+                <button class="btn btn-light">VOLVER A PORTADA</button>
+            </a>
+			</div>
+		</div>
+	</main>
+{% endblock %}

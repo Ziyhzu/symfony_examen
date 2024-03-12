@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReviewsController!{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/Index.css') }}">
+{% endblock %}
+
+{% block body %}
+
+{% for message in app.flashes('insert-form') %}
+    <div class="w-25 mx-auto alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+
+<main class="margenes">
+    <a href="/menu"><button class="btn btn-light mt-3">VOLVER AL MENU</button></a>
+    <table class="table table-bordered border-dark table-sm table-striped-columns mt-3">
+    <thead>
+        <tr>
+            <th>Codigo review</th>
+            <th>Comentario</th>
+            <th>Nota</th>
+            <th>Codigo de reserva</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% for review in reviews %}
+            <tr>
+                <td>{{ review.getReviewsIdPk() }}</td>
+                <td>{{ review.getComentario() }}</td>
+                <td>{{ review.getNotaValoracion() }}</td>
+                {% if review.getReservaIdFk() is not null %}
+                    <td>{{ review.getReservaIdFk().getReservasIdPk() }}</td>
+                {% else %}
+                    <td>El registro fue eliminado</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</main>
+{% endblock %}
